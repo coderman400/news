@@ -6,7 +6,7 @@
   "mode": "development",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -r dotenv/config src/index.js"
+    "start": "nodemon -r dotenv/config index.js"
   },
   "repository": {
     "type": "git",

@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="/css/styles.css">
-    </head>
-    <body>
-        <h1>HERES DA NEWS BRO</h1>
-
-        <%articles.forEach(function(article) {%>
-            <h2><%- article.title %></h2>
-        <% }) %>
-    </body>
-</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWS</title>
+    <link rel= "stylesheet"  type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="news">
+            <% if(articles != null) { %>
+            <% articles.forEach(function(article, index) { %>
+                <%if(article.urlToImage!=null){%>
+                <a href="/article/<%- article.source.id %>" class="newscard">
+                    <img src="<%- article.urlToImage %>" alt="<%- article.title %>">
+                    <h2><%- article.title %></h2>
+                    <p><%- article.description %></p>
+                </a>
+                <%} %>
+            <% }) %>
+            <% } else { %>
+                No posts found.
+            <% } %>
+        </div>
+    </div>  
+</body>
+</html> 
