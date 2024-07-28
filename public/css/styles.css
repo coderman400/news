@@ -1,11 +1,36 @@
 body {
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: #f6f6f6;
+    background-color: #cecece;
 }
 
 img { max-width: 100%; }
 h2 { font-size: 1.6rem; }
+
+nav{
+    display:flex;
+    align-items: center;
+    height:6rem;
+    background-color: rgb(83, 83, 83);
+    margin-bottom:30px;
+}
+
+label{
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+}
+
+#countries{
+    height: 50%;
+    margin: 15px;
+    width: 7rem;
+    background-color: white;
+    font-size: bold;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 20px;
+}
 
 .header {
     display: flex;

@@ -7,6 +7,15 @@
     <link rel= "stylesheet"  type="text/css" href="/css/styles.css">
 </head>
 <body>
+    <nav>
+        <label for="country">Country:</label>
+        <select id="countries">
+          <option value="any">Global</option>
+          <option value="us">USA</option>
+          <option value="jp">Japan</option>
+          <option value="br">Brazil</option>
+        </select> 
+    </nav>
     <div class="wrapper">
         <div class="news">
             <% if(articles != null) { %>

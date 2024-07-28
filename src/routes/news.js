@@ -6,7 +6,7 @@ newsRouter.get('', async(req,res) => {
     // res.render('news')
 
     try{
-        const newsAPI = await axios.get(`https://newsapi.org/v2/everything?q=Apple&from=2024-07-25&sortBy=popularity&apiKey=${process.env.apikey}`)
+        const newsAPI = await axios.get(`https://newsapi.org/v2/top-headlines?country=jp&from=2024-07-25&sortBy=popularity&apiKey=${process.env.apikey}`)
         res.render('news', {articles: newsAPI.data.articles})
     }catch(err){
         if(err.response){
