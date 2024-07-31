@@ -10,28 +10,37 @@
     <nav>
         <label for="country">Country:</label>
         <select id="countries">
-          <option value="any">Global</option>
-          <option value="us">USA</option>
-          <option value="jp">Japan</option>
-          <option value="br">Brazil</option>
-        </select> 
+            <option value="any" <%= country === 'any' ? 'selected' : '' %>>Global</option>
+            <option value="us" <%= country === 'us' ? 'selected' : '' %>>USA</option>
+            <option value="jp" <%= country === 'jp' ? 'selected' : '' %>>Japan</option>
+            <option value="fr" <%= country === 'fr' ? 'selected' : '' %>>France</option>
+            <option value="kr" <%= country === 'kr' ? 'selected' : '' %>>Korea</option>
+            <option value="nz" <%= country === 'nz' ? 'selected' : '' %>>New Zealand</option>
+            <option value="ca" <%= country === 'ca' ? 'selected' : '' %>>Canada</option>
+          </select> 
     </nav>
     <div class="wrapper">
         <div class="news">
             <% if(articles != null) { %>
             <% articles.forEach(function(article, index) { %>
-                <%if(article.urlToImage!=null){%>
-                <a href="/article/<%- article.source.id %>" class="newscard">
-                    <img src="<%- article.urlToImage %>" alt="<%- article.title %>">
+                <% if(article.imageUrl!=null){ %>
+                <a class="newscard">
+                    <img src="<%- article.imageUrl %>" alt="<%- article.title %>">
                     <h2><%- article.title %></h2>
                     <p><%- article.description %></p>
                 </a>
-                <%} %>
+                <% } %>
             <% }) %>
             <% } else { %>
                 No posts found.
             <% } %>
         </div>
     </div>  
+    <script>
+        document.getElementById('countries').addEventListener('change', function() {
+            const country = this.value;
+            window.location.href = `/?country=${country}`;
+        });
+    </script>
 </body>
 </html> 
