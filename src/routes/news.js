@@ -26,7 +26,7 @@ newsRouter.get('', async (req, res) => {
     const country = req.query.country || 'us';
     console.log("CALLED THIS WITH VALUE: " + country)
     try {
-        const newsAPI = await axios.get(`https://api.goperigon.com/v1/all?apiKey=${process.env.apikey}&country=${country}&from=2024-07-25&to=2024-07-30`);
+        const newsAPI = await axios.get(`https://api.goperigon.com/v1/all?apiKey=715986d4-1dfd-4aed-8d75-ffb6e8313dc1&country=${country}&from=2024-07-25&to=2024-07-30`);
         res.render('news', { country, articles: newsAPI.data.articles });
     } catch (err) {
         console.error('Error fetching news:', err);
